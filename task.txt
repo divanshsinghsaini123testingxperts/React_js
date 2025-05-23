@@ -1,1 +1,4 @@
-how are you
+1.Router -- React does not have Router(because it is single page application) ,mtlb url bhi to change krna pdega 
+2.State Management(Redux toolkit , redux ,Context API)(bez too many variables)
+3. Class based - log phle use krte the 
+4. BAAS - backend as service(firebase,superbase,appwirte)
