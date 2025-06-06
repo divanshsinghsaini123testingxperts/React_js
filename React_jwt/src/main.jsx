@@ -7,7 +7,7 @@ import  Home  from './Components/Home.jsx'
 import  Login  from './Components/Login.jsx'
 import  Register  from './Components/Register.jsx'
 import ForgotPassword from './Components/ForgotPassword.jsx'
-
+import NewPass from './Components/NewPass.jsx'
 // const router = createBrowserRouter([
 //   {
 //     path: '/',
@@ -54,6 +54,10 @@ const router = createBrowserRouter([
   {
     path: '/home',
     element: <Home />
+  },
+  {
+    path: '/new-password',
+    element: <NewPass />
   }
 ]);
 

@@ -34,7 +34,7 @@ function ForgotPassword() {
                     .then(response => {
                         if (response.ok) {
                             alert("Otp verified successfully");
-                            navigate('/Login'); // Redirect to login page after successful verification
+                            navigate('/new-password', { state: { email } }); // Redirect to new password page after successful verification
                         } else {
                             navigate('/forgot-password', { state: { email } }); // Redirect to forgot password page on error
                             throw new Error('Failed to verify OTP');

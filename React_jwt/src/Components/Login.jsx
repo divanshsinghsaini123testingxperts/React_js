@@ -3,15 +3,12 @@ import { useState } from 'react';
 import { useNavigate, Link , useLocation } from 'react-router-dom';
 
 function Login(){
-    const [email, setEmail] = useState('');
+    const location = useLocation();
+    const [email, setEmail] = useState(location.state?.email || '');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-    const location = useLocation();
-    const { state } = location;
-    if (state && state.email) {
-        setEmail(state.email);
-    }
+   
     const handleLogin = async () => {
         try {
             const user = { Email: email, Password: password };
@@ -19,7 +16,7 @@ function Login(){
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorization: `Bearer ${localStorage.getItem("token")}` 
+                    // Authorization: `Bearer ${localStorage.getItem("token")}` 
                 },
                 body: JSON.stringify(user),
             });
@@ -65,7 +62,7 @@ function Login(){
                     Sign In
                 </button>
                 <Link to="/forgot-password" className="forgot-password-link">
-                    Forgot Password?
+                    Forgot Password? 
                 </Link>
                 <Link to="/register" className="register-link">
                     Don't have an account? Register here
