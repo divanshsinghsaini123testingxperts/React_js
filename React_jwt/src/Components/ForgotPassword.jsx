@@ -26,7 +26,7 @@ function ForgotPassword() {
             }
             else {
                 const varificaton = { Email: email, Otp: otp };
-                fetch('https://reqres.in/api/AuthService/Forgot_Password_otpcheck', {
+                fetch('https://localhost:7109/api/AuthService/Forgot_Password_otpcheck', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -50,12 +50,12 @@ function ForgotPassword() {
         }
         else{
             const user = { Email: email };
-            fetch('https://reqres.in/api/AuthService/Forgot_Password_mailcheck', {
+            fetch('https://localhost:7109/api/AuthService/Forgot_Password_mailcheck', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(user),
+                body : JSON.stringify(user)
             })
             .then(response => {
                 if (response.ok) {

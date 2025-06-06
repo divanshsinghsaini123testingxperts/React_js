@@ -7,11 +7,12 @@ function Login(){
     const navigate = useNavigate();
     
     const handleLogin = () => {
-        const user = { Email: email, Password : password };
-        const respnse = fetch('https://reqres.in/api/login', {
+        const user = { Email: email, Password: password };
+        const response = fetch('https://localhost:7109/api/AuthService/LoginRequest', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                 Authorization: `Bearer ${localStorage.getItem("token")}` // Include token if available
             },
             body: JSON.stringify(user),
         })

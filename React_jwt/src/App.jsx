@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom' ;
 function App() {
   const [Token , setToken] = useState(localStorage.getItem('token') || null) 
   //ya to ye null hoga ya token hoga
@@ -20,11 +20,12 @@ function App() {
          <button className="button" onClick={handleRegister}> Register</button>
        </div>
        :
-       <div>
-         <h1>Welcome to the App :: {Token.email}</h1>
-         <button className="button" onClick={() => setToken(null)}>Logout</button>
-       </div>
+       navigate('/Login')
     }
+    {/* <div>
+         <button className="button" onClick={handleLogin}> Login</button>
+         <button className="button" onClick={handleRegister}> Register</button>
+       </div> */}
     </>
   )
 }
