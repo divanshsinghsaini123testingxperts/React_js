@@ -50,6 +50,8 @@ function Login(){
             onChange={(e) => setPassword(e.target.value)} 
         />
         <button onClick={handleLogin}>Login</button>
+        <button onClick={() => navigate('/Register')}>Register</button>
+        <button onClick={() => navigate('/Login/forgot-password' ,{State : {email}})}>Forgot Password</button>
         </div>
     );
 
